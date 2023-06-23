@@ -13,7 +13,6 @@ namespace RPGDev
         public int Ataque { get; set; }
         public int Defesa { get; set; }
         public string Classe { get; set; }
-        
         public Habilidade Habilidade { get; set; }
 
         public Personagem ConstruirPersonagem()
@@ -22,7 +21,7 @@ namespace RPGDev
             int ataque = 0;
             int defesa = 0;
 
-            Console.WriteLine("Digite o Nome");
+            Console.Write("\nDigite o Nome: ");
             string nome = Console.ReadLine();
             Console.WriteLine("Seu Personagem será: 1- Atacante/ 2- Defensor/ 3- Misto");
             string tipo = Console.ReadLine();
@@ -43,68 +42,70 @@ namespace RPGDev
                     defesa = 5;
                     tipo = "Misto";
                     break;
-             
             }
+
             int hp = defesa * 2;
             int atributo = ataque;
 
             p.HP = hp;
-            p.Ataque = atributo;   
+            p.Ataque = atributo;
             p.Defesa = defesa;
             p.Nome = nome;
             p.Classe = tipo;
 
             return p;
         }
+
+        // Método CalcularDano
+        public virtual int CalcularDano()
+        {
+            return 0;
+        }
+
         // Sobrescrevendo o ToString 
         public override string ToString()
         {
-            return $"Nome: {Nome}, Hp: {HP}, Ataque: {Ataque}, Defesa: {Defesa}, Tipo: {Classe}";
+            return $"Nome: {Nome}, Hp: {HP}, Ataque: {Ataque}," +
+                   $" Defesa: {Defesa}, Tipo: {Classe}";
         }
     }
-   
+
     public class Guerreiro : Personagem
     {
-        public int Forca { get; set; }
-
-        public Guerreiro(string nome, int ataque, int defesa, int hp, int forca)
+        public Guerreiro(string nome,int ataque,int defesa,int hp,string forca)
         {
             Nome = nome;
             HP = hp;
             Ataque = ataque;
             Defesa = defesa;
-            Forca = forca;
+            Habilidade = new Habilidade(forca,"Golpes",Ataque * +2);
         }
         public Guerreiro() { }
     }
 
     public class Mago : Personagem
     {
-        public int Magia { get; set; }
-
-        public Mago(string nome, int ataque, int defesa, int hp, int magia)
+        public Mago(string nome,int ataque,int defesa,int hp,string magia)
         {
             Nome = nome;
             HP = hp;
             Ataque = ataque;
             Defesa = defesa;
-            Magia = magia;
+            Habilidade = new Habilidade(magia,"Misteriosa",Ataque - 1);
         }
         public Mago() { }
     }
 
     public class Ranger : Personagem
     {
-        public int Destreza { get; set; }
-
-        public Ranger(string nome, int ataque,int defesa, int hp,  int destreza)
+        public Ranger(string nome,int ataque,int defesa,int hp,string destreza)
         {
             Nome = nome;
             HP = hp;
             Ataque = ataque;
             Defesa = defesa;
-            Destreza = destreza;
+            Habilidade = new Habilidade(destreza,"Capacidade",Ataque - 2);
         }
-        public Ranger() { } 
+        public Ranger() { }
     }
 }

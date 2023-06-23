@@ -17,36 +17,31 @@ namespace RPGDev
 
         public Mapa()
         {
-            Console.WriteLine("Gerando Mapa");
-            formatoMapa = new int[alturaM, larguraM];
-            mobSpaw = new int[] { 0 ,1, 2, 3 };
+            Console.WriteLine("\nGerando Mapa");
+            formatoMapa = new int[alturaM,larguraM];
+            mobSpaw = new int[] { 0,1,2,3 };
             MontarMapa();
             Console.WriteLine("Mapa Gerado");
         }
 
         public void MontarMapa()
         {
-           
             Random rdn = new Random();
             for (int i = 0; i < alturaM; i++)
             {
                 for (int j = 0; j < larguraM; j++)
                 {
-                    
-                    formatoMapa[i, j] = mobSpaw[rdn.Next(0,3)];
-
+                    formatoMapa[i,j] = mobSpaw[rdn.Next(0,3)];
                 }
-
             }
-            int xEntrada = rdn.Next(0, 10);
-            int yEntrada = rdn.Next(0, 10);
-            formatoMapa[xEntrada, yEntrada] = 0;
-            entrada = new int[] { xEntrada, yEntrada};
-            int xSaida = rdn.Next(0, 10);
-            int ySaida = rdn.Next(0, 10);
-            formatoMapa[xSaida, ySaida] = 4;
-            saida = new int[] { xSaida, ySaida };
-           
+            int xEntrada = rdn.Next(0,10);
+            int yEntrada = rdn.Next(0,10);
+            formatoMapa[xEntrada,yEntrada] = 0;
+            entrada = new int[] { xEntrada,yEntrada };
+            int xSaida = rdn.Next(0,10);
+            int ySaida = rdn.Next(0,10);
+            formatoMapa[xSaida,ySaida] = 4;
+            saida = new int[] { xSaida,ySaida };
         }
     }
 }

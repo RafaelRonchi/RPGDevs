@@ -11,25 +11,25 @@ namespace RPGDev
     {
         public string NomeItem { get; set; }
         public int TipoItem { get; set; }
-        public int PoderItem {get; set; }
+        public int PoderItem { get; set; }
         public int LocalItem { get; set; }
         public int Ataque { get; set; }
         public int Defesa { get; set; }
-        
+
         // Itens 1 = poções 2 = armas 3 = escudos
         public Itens()
         {
-            
+
         }
+
         public Itens Pocao()
         {
             NomeItem = "Pocao Pequena";
             TipoItem = 1;
             PoderItem = 10;
-           
             return this;
-
         }
+        
         public Itens Espada()
         {
             NomeItem = "Essencia da Espada";
@@ -37,6 +37,7 @@ namespace RPGDev
             Ataque = 3;
             return this;
         }
+        
         public Itens Escudo()
         {
             NomeItem = "Essencia da Protecao";
@@ -44,6 +45,7 @@ namespace RPGDev
             Defesa = 3;
             return this;
         }
+        
         public Itens Loot()
         {
             List<Itens> lootList = new List<Itens>();
@@ -51,7 +53,7 @@ namespace RPGDev
             lootList.Add(Pocao());
             lootList.Add(Espada());
             Random rdn = new Random();
-            int rdnloot = rdn.Next(0, lootList.Count);
+            int rdnloot = rdn.Next(0,lootList.Count);
             return lootList[1];
         }
     }

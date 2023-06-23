@@ -38,3 +38,11 @@ G:\GitClones\BranchGeisson\RPGDevs\RPGDev\obj\Debug\RPGDev.csproj.SuggestedBindi
 G:\GitClones\BranchGeisson\RPGDevs\RPGDev\obj\Debug\RPGDev.csproj.CoreCompileInputs.cache
 G:\GitClones\BranchGeisson\RPGDevs\RPGDev\obj\Debug\RPGDev.exe
 G:\GitClones\BranchGeisson\RPGDevs\RPGDev\obj\Debug\RPGDev.pdb
+C:\DevelopmentLearning\Devs2Blu\POO\TrabalhoGrupo\RPGDevs2\RPGDev\bin\Debug\RPGDev.exe.config
+C:\DevelopmentLearning\Devs2Blu\POO\TrabalhoGrupo\RPGDevs2\RPGDev\bin\Debug\RPGDev.exe
+C:\DevelopmentLearning\Devs2Blu\POO\TrabalhoGrupo\RPGDevs2\RPGDev\bin\Debug\RPGDev.pdb
+C:\DevelopmentLearning\Devs2Blu\POO\TrabalhoGrupo\RPGDevs2\RPGDev\obj\Debug\RPGDev.csproj.AssemblyReference.cache
+C:\DevelopmentLearning\Devs2Blu\POO\TrabalhoGrupo\RPGDevs2\RPGDev\obj\Debug\RPGDev.csproj.SuggestedBindingRedirects.cache
+C:\DevelopmentLearning\Devs2Blu\POO\TrabalhoGrupo\RPGDevs2\RPGDev\obj\Debug\RPGDev.csproj.CoreCompileInputs.cache
+C:\DevelopmentLearning\Devs2Blu\POO\TrabalhoGrupo\RPGDevs2\RPGDev\obj\Debug\RPGDev.exe
+C:\DevelopmentLearning\Devs2Blu\POO\TrabalhoGrupo\RPGDevs2\RPGDev\obj\Debug\RPGDev.pdb

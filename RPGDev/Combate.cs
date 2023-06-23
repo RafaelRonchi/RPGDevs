@@ -19,7 +19,7 @@ namespace RPGDev
             turn = 0;
         }
 
-        public bool RealizarCombat(Player player, Monstros mob)
+        public bool RealizarCombat(Player player,Monstros mob)
         {
             p1 = player;
             mob1 = mob;
@@ -35,11 +35,10 @@ namespace RPGDev
                 {
                     Console.WriteLine("Você realiza um ataque!");
                     Atacar();
-                    Console.WriteLine("{0} realiza um ataque!", mob1.Nome);
+                    Console.WriteLine("{0} realiza um ataque!",mob1.Nome);
                     MobAtaca();
-
-
                 }
+
                 if (opcao == 2)
                 {
 
@@ -48,43 +47,39 @@ namespace RPGDev
             if (IsDead(p1)) { return false; }
             if (IsDead(mob1)) { return true; };
             return true;
-            }
-        
+        }
+
         public void Combat()
         {
-
-
-
         }
 
-        
         public void Atacar()
         {
-            mob1.HP = mob1.HP - p1.Ataque ;
-            Console.WriteLine($"O Seu ataque causou {p1.Ataque} de dano");
-
+            mob1.HP -= p1.Ataque;
+            Console.WriteLine
+                ($"O Seu ataque causou {p1.CalcularDano()} de dano");
         }
+
         public void Defender()
         {
-            mob1.HP = mob1.HP - p1.Ataque;
-
+            mob1.HP -= p1.Ataque;
         }
+
         public void MobAtaca()
         {
-            p1.HP = p1.HP - mob1.Ataque;
-            Console.WriteLine($"{mob1.Nome} Atacou e causou {mob1.Ataque}");
-
+            p1.HP -= mob1.Ataque;
+            Console.WriteLine
+                ($"{mob1.Nome} Atacou e causou {mob1.CalcularDano()}");
         }
+
         public bool IsDead(Personagem p1)
+        {
+            if (p1.HP <= 0)
             {
-            if (p1.HP <= 0) { 
                 Console.WriteLine($"{p1.Nome} Morreu");
-                return true; 
+                return true;
             }
-             return false; 
-            }
-
-
-
+            return false;
+        }
     }
 }

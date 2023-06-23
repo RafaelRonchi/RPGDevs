@@ -12,13 +12,10 @@ namespace RPGDev
 {
     internal class Program
     {
-       
         static void Main(string[] args)
         {
             // Chamada do metoto controler
             Controler control = new Controler();
-            
-
         }
     }
 }
