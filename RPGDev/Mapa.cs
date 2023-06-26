@@ -98,7 +98,7 @@ namespace RPGDev
 
             }
             Console.WriteLine("Mapa percorrido:");
-            Console.WriteLine("C = Entrada S = Sainda");
+            Console.WriteLine("C = Entrada S = Saida");
             Console.WriteLine("----------");
             for (int i = 0; i < larguraM; i++)
             {

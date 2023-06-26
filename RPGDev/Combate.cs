@@ -37,13 +37,17 @@ namespace RPGDev
 
                 // validar opção
                 int opcao = int.Parse(Console.ReadLine());
-                if (opcao == 1)
+                if (opcao > 2 || opcao <= 0)
+                {
+                    Console.WriteLine("Não tente se safar da luta, Escolha uma opção válida");
+                }
+                else if (opcao == 1)
                 {
                     if (player.ClasseLuta == "GUERREIRO")
                     {
                         Console.WriteLine($" Você usa {player.Habilidade.NomeHabilidade}!");
                         Atacar();
-                        Console.WriteLine("\n {0} realiza um ataque!",mob1.Nome);
+                        Console.WriteLine("\n {0} realiza um ataque!", mob1.Nome);
                         MobAtaca();
                     }
 
@@ -51,14 +55,14 @@ namespace RPGDev
                     {
                         Console.WriteLine($" Você usa {player.Habilidade.NomeHabilidade}!");
                         Atacar();
-                        Console.WriteLine("\n{0} realiza um ataque!",mob1.Nome);
+                        Console.WriteLine("\n{0} realiza um ataque!", mob1.Nome);
                         MobAtaca();
                     }
                     else if (player.ClasseLuta == "RANGER")
                     {
                         Console.WriteLine($" Você usa {player.Habilidade.NomeHabilidade}!");
                         Atacar();
-                        Console.WriteLine("\n{0} realiza um ataque!",mob1.Nome);
+                        Console.WriteLine("\n{0} realiza um ataque!", mob1.Nome);
                         MobAtaca();
                     }
                 }

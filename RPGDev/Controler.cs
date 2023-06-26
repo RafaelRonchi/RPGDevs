@@ -20,7 +20,7 @@ namespace RPGDev
 
         public Controler()
         {
-            Console.OutputEncoding = Encoding.Unicode;
+            Console.OutputEncoding = Encoding.UTF8;
             menu = new Menu();
 
             int menuOpcao = menu.MenuInicial();
@@ -40,13 +40,13 @@ namespace RPGDev
             Console.Clear();
 
             string m1 = "\n Você entra em uma Masmorra Escura";
-            foreach (char letra in m1) { Console.Write(letra); Thread.Sleep(1); }
+            foreach (char letra in m1) { Console.Write(letra); Thread.Sleep(70); }
             Console.WriteLine();
             string m2 = " Depois de andar um pouco, você olha pra trás e percebe que se perdeu";
-            foreach (char letra in m2) { Console.Write(letra); Thread.Sleep(1); }
+            foreach (char letra in m2) { Console.Write(letra); Thread.Sleep(70); }
             Console.WriteLine();
             string m3 = " Agora perdido, você precisa decidir:";
-            foreach (char letra in m3) { Console.Write(letra); Thread.Sleep(1); }
+            foreach (char letra in m3) { Console.Write(letra); Thread.Sleep(70); }
             Console.WriteLine();
             OpcoesMap();
             Console.ReadKey();
@@ -57,8 +57,6 @@ namespace RPGDev
             // validar nome do personagem
             Console.Write("\n Digite o Nome do seu Personagem: ");
             string nome = Console.ReadLine();
-            //Console.WriteLine("Seu Personagem será: 1- Atacante/ 2- Defensor/ 3- Misto");
-            //string tipo = Console.ReadLine();
 
 
             if (opcao == 1)
@@ -84,7 +82,7 @@ namespace RPGDev
                           $"\n Digite 4 para ir para o Oeste \u2190" +
                           $"\n Digite 5 para ver status" +
                           $"\n Digite 6 para ver Mochila" +
-                           $"\n Digite 7 para ver Mochila" +
+                          $"\n Digite 7 para ver Mapa" +
                           $"\n Opção -> ");
             string valida = Console.ReadLine();
             int opcao = 0;
@@ -149,13 +147,18 @@ namespace RPGDev
             }
 
             // validar opção
-            Console.Write($"\n Digite o numero no item para utiliza-lo!" +
-                          $"\n Digite 0 para retorna a aventura!" +
+            Console.Write($"\n Digite o número no item para utiliza-lo!" +
+                          $"\n Digite 0 para retornar a aventura!" +
                           $"\n Opção -> ");
 
             int opcao = int.Parse(Console.ReadLine());
             if (opcao == 0) { OpcoesMap(); }
-            else if (opcao != 0) { UtilizarItem(opcao - 1); }
+            else if (opcao >= 1 && opcao <=3) { UtilizarItem(opcao - 1); }
+            else if (opcao < 0 || opcao > 3)
+            {
+                Console.WriteLine("Você não encontra nada nessa parte da sua mochila");
+                Console.WriteLine("Procure em outra parte");
+            }
 
             Console.WriteLine(" Digite qualquer tecla para retorna ao mapa");
             Console.ReadKey();
@@ -168,21 +171,21 @@ namespace RPGDev
             if (P1.Itens[opcao].TipoItem == 1)
             {
                 P1.HP += P1.Itens[opcao].PoderItem;
-                Console.WriteLine($" Voce Utilizou {P1.Itens[opcao].NomeItem}" +
+                Console.WriteLine($" Você Utilizou {P1.Itens[opcao].NomeItem}" +
                                   $" e recuperou {P1.Itens[opcao].PoderItem} de vida!");
                 P1.Itens.RemoveAt(opcao);
             }
             else if (P1.Itens[opcao].TipoItem == 2)
             {
                 P1.Ataque += P1.Itens[opcao].Ataque;
-                Console.WriteLine($" Voce Utilizou {P1.Itens[opcao].NomeItem}" +
+                Console.WriteLine($" Você Utilizou {P1.Itens[opcao].NomeItem}" +
                                   $" e Aumentou seu ataque em  {P1.Itens[opcao].PoderItem} !");
                 P1.Itens.RemoveAt(opcao);
             }
             else if (P1.Itens[opcao].TipoItem == 3)
             {
                 P1.Defesa += P1.Itens[opcao].Defesa;
-                Console.WriteLine($" Voce Utilizou {P1.Itens[opcao].NomeItem}" +
+                Console.WriteLine($" Você Utilizou {P1.Itens[opcao].NomeItem}" +
                                   $" Aumentou sua defesa em  {P1.Itens[opcao].PoderItem} !");
                 P1.Itens.RemoveAt(opcao);
             };

@@ -30,7 +30,7 @@ namespace RPGDev
             Experiencia = 1;
             Localização = new int[2] ;
            
-            Ataque = 10;
+            Ataque = 5;
             Defesa = 3;
             HP = 50;
             ExpNivel = new int[] { 30,60,90,150,200 };

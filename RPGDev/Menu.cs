@@ -10,6 +10,7 @@ namespace RPGDev
     {
         public int MenuInicial()
         {
+            Console.WriteLine("Seja Bem Vindo a RataZona");
             Console.Write($"\n Criação de Personagem" +
                               $"\n Digite uma opção para começar" +
                               $"\n 1 - Criar Personagem" +
